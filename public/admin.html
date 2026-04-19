@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Add Product</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --radius: 8px;
+      --primary: #6c63ff;
+      --accent: #ff69b4;
+      --text: #222;
+      --bg: #f9f9f9;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      margin: 0;
+      padding: 0;
+    }
+
+    .header, .footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .form-container h2 {
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: var(--radius);
+      font-size: 1rem;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: var(--accent);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🛠️ Admin Panel - Add New Product</h1>
+  </div>
+
+  <div class="form-container">
+    <form action="/admin/add" method="POST">
+      <input type="text" name="name" placeholder="Product Name" required>
+      <input type="text" name="image" placeholder="Image URL (300x200)" required>
+      <input type="number" name="price" placeholder="Price (Rs)" step="0.01" required>
+      <textarea name="description" placeholder="Product Description" rows="4" required></textarea>
+      <button class="button" type="submit">Add Product</button>
+    </form>
+
+    <div class="back-link">
+      <a href="index.html" class="button">← Back to Store</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 Nova Store Admin Panel</p>
+  </div>
+</body>
+</html>

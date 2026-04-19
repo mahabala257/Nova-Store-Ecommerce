@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nova Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ✅ Header -->
+  <div class="header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="images/logo.png" alt="Nova Logo" style="height: 40px; border-radius: 6px;">
+      <h1 style="margin: 0;">Nova Store</h1>
+    </div>
+    <div style="display: flex; gap: 15px; align-items: center;">
+      <a href="index.html" class="button" title="Home">🏠</a>
+      <a href="wishlist.html" class="button" title="Wishlist">❤️</a>
+      <a href="login.html" class="button" title="Login">👤</a>
+      <a href="cart.html" class="button" title="Cart">🛒</a>
+    </div>
+  </div>
+
+  <!-- ✅ Product Grid -->
+  <div class="product-grid" id="product-list">
+    <p>Loading products...</p>
+  </div>
+
+  <!-- ✅ Footer -->
+  <div class="footer">
+    <a href="cart.html" class="button">🛒 View Cart</a>
+    <p>&copy; 2025 Nova Store</p>
+  </div>
+
+  <!-- ✅ Script -->
+  <script>
+    fetch('/data/products.json')
+      .then(res => res.json())
+      .then(products => {
+        const list = document.getElementById("product-list");
+        list.innerHTML = "";
+
+        products.forEach(p => {
+  const card = document.createElement("div");
+  card.className = "product-card";
+  card.innerHTML = `
+    <div class="product-image">
+      <img src="${p.image}" alt="${p.name}">
+    </div>
+    <h3>${p.name}</h3>
+    <p>Rs. ${p.price.toFixed(2)}</p>
+    <p>⭐ ${p.rating || '4.5'} | ${p.category || 'General'}</p>
+
+    <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: center;">
+      <a href="product.html?id=${p.id}" class="button">View</a>
+      <button class="button" onclick="addToCart(${p.id})">Add to Cart</button>
+      <button class="button" onclick="buyNow(${p.id})">Buy Now</button>
+      <button class="button wishlist" onclick="addToWishlist(${p.id})">❤️</button>
+    </div>
+  `;
+  list.appendChild(card);
+});
+
+      })
+      .catch(err => {
+        console.error("Product loading failed", err);
+        document.getElementById("product-list").innerHTML = "<p>⚠️ Could not load products.</p>";
+      });
+
+    function addToCart(id) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(id);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("✅ Added to cart!");
+    }
+
+    function buyNow(id) {
+      localStorage.setItem("buyNowId", id);
+      window.location.href = `product.html?id=${id}`;
+    }
+    function addToWishlist(id) {
+  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  if (wishlist.includes(id)) {
+    alert("Already in wishlist ❤️");
+    return;
+  }
+
+  wishlist.push(id);
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  alert("Added to wishlist! ❤️");
+}
+
+  </script>
+</body>
+</html>

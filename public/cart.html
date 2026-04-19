@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <h1>🛒 Your Shopping Cart</h1>
+  </div>
+
+  <div class="product-grid" id="cart-items"></div>
+
+  <div class="footer">
+  <a href="index.html" class="button">← Continue Shopping</a>
+  <button class="button" onclick="buyNow()">Buy Now</button>
+  <p>&copy; 2025 Nova Store</p>
+  </div>
+
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const container = document.getElementById("cart-items");
+
+    if (cart.length === 0) {
+      container.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+      fetch('/data/products.json')
+        .then(res => res.json())
+        .then(products => {
+          const items = cart.map(id => products.find(p => p.id === id)).filter(Boolean);
+          if (items.length === 0) {
+            container.innerHTML = "<p>Your cart is empty or items are unavailable.</p>";
+            return;
+          }
+
+          container.innerHTML = items.map(p => `
+            <div class="product-card">
+              <div class="product-image">
+                <img src="${p.image}" alt="${p.name}">
+              </div>
+              <h3>${p.name}</h3>
+              <p>Rs. ${p.price.toFixed(2)}</p>
+              <button class="button" onclick="removeFromCart(${p.id})">Remove</button>
+            </div>
+          `).join("");
+        })
+        .catch(err => {
+          console.error("Error loading cart items:", err);
+          container.innerHTML = "<p>Failed to load cart items.</p>";
+        });
+    }
+
+    function removeFromCart(id) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart = cart.filter(item => item !== id);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      location.reload();
+    }
+
+    function buyNow() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    // Clear the cart
+    localStorage.removeItem("cart");
+
+    // Redirect to order success page
+    window.location.href = "order-success.html";
+  }
+  </script>
+</body>
+</html>

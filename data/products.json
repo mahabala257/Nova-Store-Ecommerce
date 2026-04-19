@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "price": 149.99,
+    "image": "/images/wirelessheadphone.png",
+    "description": "Noise-cancelling over-ear wireless headphones",
+    "category": "Electronics",
+    "rating": 4.6
+  },
+  {
+    "id": 2,
+    "name": "Organic Face Cream",
+    "price": 34.99,
+    "image": "/images/organicfacecream.png",
+    "description": "Hydrating cream made with natural ingredients",
+    "category": "Beauty",
+    "rating": 4.2
+  },
+  {
+    "id": 3,
+    "name": "Bluetooth Speaker",
+    "price": 59.99,
+    "image": "/images/bluetoothspeaker.png",
+    "description": "Portable speaker with rich bass and waterproof design",
+    "category": "Electronics",
+    "rating": 4.4
+  },
+  {
+    "id": 4,
+    "name": "Smart LED Bulb",
+    "price": 12.99,
+    "image": "/images/Smart LED Bulb.png",
+    "description": "Color-changing LED bulb controllable via app",
+    "category": "Home",
+    "rating": 4.1
+  },
+  {
+    "id": 5,
+    "name": "Laptop Stand",
+    "price": 19.99,
+    "image": "/images/Laptop Stand.png",
+    "description": "Aluminum stand with adjustable height and angle",
+    "category": "Accessories",
+    "rating": 4.3
+  },
+  {
+    "id": 6,
+    "name": "Reusable Water Bottle",
+    "price": 14.99,
+    "image": "/images/Reusable Water Bottle.png",
+    "description": "BPA-free stainless steel bottle, 750ml",
+    "category": "Lifestyle",
+    "rating": 4.0
+  },
+  {
+    "id": 7,
+    "name": "Notebook Journal",
+    "price": 8.99,
+    "image": "/images/Notebook Journal.png",
+    "description": "Hardcover ruled journal, 200 pages",
+    "category": "Stationery",
+    "rating": 4.5
+  },
+  {
+    "id": 8,
+    "name": "Essential Oil Diffuser",
+    "price": 24.99,
+    "image": "/images/Essential Oil Diffuser.png",
+    "description": "Aromatherapy diffuser with LED mood lights",
+    "category": "Home",
+    "rating": 4.2
+  },
+  {
+    "id": 9,
+    "name": "Yoga Mat",
+    "price": 29.99,
+    "image": "/images/yoga mat.png",
+    "description": "Non-slip eco-friendly yoga mat, 6mm thick",
+    "category": "Fitness",
+    "rating": 4.7
+  },
+  {
+    "id": 10,
+    "name": "Phone Tripod",
+    "price": 17.99,
+    "image": "/images/Phone Tripod.png",
+    "description": "Flexible tripod for phones and action cameras",
+    "category": "Accessories",
+    "rating": 4.3
+  },
+  {
+    "id": 11,
+    "name": "Green Tea Cleanser",
+    "price": 19.49,
+    "image": "/images/Green Tea Cleanser.png",
+    "description": "Foaming face wash with green tea extracts",
+    "category": "Beauty",
+    "rating": 4.4
+  },
+  {
+    "id": 12,
+    "name": "Coffee Mug Set",
+    "price": 22.99,
+    "image": "/images/Coffee Mug Set.png",
+    "description": "Set of 4 ceramic coffee mugs with handles",
+    "category": "Kitchen",
+    "rating": 4.6
+  },
+  {
+    "id": 13,
+    "name": "LED Desk Lamp",
+    "price": 27.49,
+    "image": "/images/led desk lamp.png",
+    "description": "Adjustable LED desk lamp with USB charging port",
+    "category": "Home",
+    "rating": 4.2
+  },
+  {
+    "id": 14,
+    "name": "Bamboo Toothbrushes",
+    "price": 9.99,
+    "image": "/images/bamboo toothbrushes.png",
+    "description": "Pack of 4 eco-friendly bamboo toothbrushes",
+    "category": "Personal Care",
+    "rating": 4.1
+  },
+  {
+    "id": 15,
+    "name": "Mini Air Purifier",
+    "price": 39.99,
+    "image": "/images/mini air purifier.png",
+    "description": "Compact air purifier for desks and small rooms",
+    "category": "Electronics",
+    "rating": 4.5
+  },
+  {
+    "id": 16,
+    "name": "Hair Serum",
+    "price": 25.99,
+    "image": "/images/hair serum.png",
+    "description": "Smoothing serum for frizz-free hair",
+    "category": "Beauty",
+    "rating": 4.3
+  },
+  {
+    "id": 17,
+    "name": "Wireless Mouse",
+    "price": 11.49,
+    "image": "/images/wireless mouse.png",
+    "description": "Ergonomic wireless mouse with silent clicks",
+    "category": "Electronics",
+    "rating": 4.4
+  },
+  {
+    "id": 18,
+    "name": "Berry Body Scrub",
+    "price": 21.99,
+    "image": "/images/berry body scrub.png",
+    "description": "Exfoliating body scrub with berry seeds",
+    "category": "Beauty",
+    "rating": 4.2
+  },
+  {
+    "id": 19,
+    "name": "Lilac Candle",
+    "price": 16.99,
+    "image": "/images/lilac candle.png",
+    "description": "Soy wax candle with natural lilac fragrance",
+    "category": "Home",
+    "rating": 4.3
+  },
+  {
+    "id": 20,
+    "name": "Grapefruit Toner",
+    "price": 18.99,
+    "image": "/images/grapefruit toner.png",
+    "description": "Balancing toner with grapefruit and witch hazel",
+    "category": "Beauty",
+    "rating": 4.4
+  }
+]

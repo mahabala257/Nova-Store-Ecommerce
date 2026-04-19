@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Detail</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .product-detail {
+      max-width: 800px;
+      margin: 40px auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .product-detail img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 8px;
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-info h2 {
+      margin-top: 0;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      color: #c71585;
+      margin: 10px 0;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .buy-btn:hover {
+      background: #0056b3;
+    }
+
+    .header, .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    .footer a {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🛍️ Product Details</h1>
+  </div>
+
+  <div id="product-detail" class="product-detail">
+    <p>Loading product...</p>
+  </div>
+
+  <div class="footer">
+    <a href="index.html" class="button">← Back to Store</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    fetch(`/api/products/${id}`)
+      .then(res => {
+        if (!res.ok) throw new Error("Product not found");
+        return res.json();
+      })
+      .then(data => {
+        document.getElementById('product-detail').innerHTML = `
+          <img src="${data.image}" alt="${data.name}">
+          <div class="product-info">
+            <h2>${data.name}</h2>
+            <p>${data.description}</p>
+            <div class="price">Price: Rs. ${data.price.toFixed(2)}</div>
+            <button class="buy-btn" onclick="addToCart(${data.id})">Add to Cart</button>
+            <a href="cart.html" class="buy-btn">Go to Cart</a>
+          </div>
+        `;
+      })
+      .catch(err => {
+        document.getElementById('product-detail').innerHTML = `<p style="color:red;">Product not found.</p>`;
+      });
+
+    function addToCart(id) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(id);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Added to cart!");
+    }
+  </script>
+</body>
+</html>
