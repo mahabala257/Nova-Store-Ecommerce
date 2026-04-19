@@ -20,10 +20,8 @@ It allows users to browse products, manage cart/wishlist, and simulate purchases
 | Property | Details |
 |----------|---------|
 | **Name** | Nova Store |
-| **Version** | 1.0.0 |
 | **Type** | Full-stack E-Commerce Web App |
 | **Tech Stack** | Node.js + Express, HTML/CSS/JS |
-| **Server** | `http://localhost:3000` |
 | **Storage** | JSON, localStorage, In-Memory |
 
 ---
@@ -81,7 +79,6 @@ npm install
 npm start
 ```
 
-Open: `http://localhost:3000`
 
 ---
 
