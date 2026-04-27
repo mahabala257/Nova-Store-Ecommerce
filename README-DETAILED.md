@@ -104,5 +104,3 @@ d:/e-com/
 4. User profiles/orders
 5. Search & filters
 
-**Author**: mahal (C:/Users/mahal)  
-**Generated**: By BLACKBOXAI Analysis
