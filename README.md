@@ -105,6 +105,3 @@ e-com/
 - JWT authentication
 - Order tracking
 
----
-
-👨‍💻 **Author**: Mahalakshmi B (mahabala257)
